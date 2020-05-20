@@ -221,7 +221,7 @@ if __name__ == "__main__":
       half_background(-375,200,'red')
       outline()
       continue
-    if country.lower() == "china" or country.lower() == "cn" or country.lower() == "prc" or country.lower() == "people's republic of china": #TBD
+    if country.lower() == "china" or country.lower() == "cn" or country.lower() == "prc" or country.lower() == "people's republic of china":
       print("Country Selected: China / PRC")
       init()
       half_background(-375,200,'red')
@@ -354,6 +354,30 @@ if __name__ == "__main__":
       print("Country Selected: Poland")
       init()
       half_background(-375,-20,'red')
+      outline()
+      continue
+    if country.lower() == "russia" or country.lower() == "ru":
+      print("Country Selected: Russia")
+      init()
+      third_background(-375,200,"white")
+      third_background(-375,200-(440/3),"blue")
+      third_background(-375,200-(2*(440/3)),"red")
+      outline()
+      continue
+    if country.lower() == "netherlands" or country.lower() == "nl" or country.lower() == "the netherlands":
+      print("Country Selected: The Netherlands")
+      init()
+      third_background(-375,200,"red")
+      third_background(-375,200-(440/3),"white")
+      third_background(-375,200-(2*(440/3)),"blue")
+      outline()
+      continue
+    if country.lower() == "germany" or country.lower() == "de":
+      print("Country Selected: Germany")
+      init()
+      third_background(-375,200,"black")
+      third_background(-375,200-(440/3),"red")
+      third_background(-375,200-(2*(440/3)),"yellow")
       outline()
       continue
     if country.lower() == "exit" or country.lower() == "quit" or country.lower() == "close":
