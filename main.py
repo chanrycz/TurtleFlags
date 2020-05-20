@@ -150,22 +150,22 @@ def canton(loc_x,loc_y,width,height,color):
   t.up()
 
 
-def draw_stripes(loc_x,loc_y,color1,color2,count):
-  if count % 2 != 0:
-    for stripe in range(count-1):
-      for color in [color1,color2]:
-        t.up()
-        t.goto(loc_x,loc_y)
-        t.down()
-        t.color(color)
-        t.begin_fill()
-        for _ in range(2):
-          t.fd(750)
-          t.rt(90)
-          t.fd(220/count)
-          t.rt(90)
-        t.end_fill()
-        loc_y -= (220/count)
+def draw_stripes_even(loc_x,loc_y,color1,color2,count):
+  actual_count = (count)/2
+  for stripe in range(actual_count):
+    for color in [color1,color2]:
+      t.up()
+      t.goto(loc_x,loc_y)
+      t.down()
+      t.color(color)
+      t.begin_fill()
+      for _ in range(2):
+        t.fd(750)
+        t.rt(90)
+        t.fd(220/actual_count)
+        t.rt(90)
+      t.end_fill()
+      loc_y -= (220/actual_count)
   t.up()
   t.goto(loc_x,loc_y)
   t.down()
@@ -174,25 +174,10 @@ def draw_stripes(loc_x,loc_y,color1,color2,count):
   for _ in range(2):
     t.fd(750)
     t.rt(90)
-    t.fd(220/count)
+    t.fd(220/actual_count)
     t.rt(90)
   t.end_fill()
-  loc_y -= (220/count)
-  if count % 2 == 0:
-    for stripe in range(count):
-      for color in [color1,color2]:
-        t.up()
-        t.goto(loc_x,loc_y)
-        t.down()
-        t.color(color)
-        t.begin_fill()
-        for _ in range(2):
-          t.fd(750)
-          t.rt(90)
-          t.fd(220/count)
-          t.rt(90)
-        t.end_fill()
-        loc_y -= (220/count)
+  loc_y -= (220/actual_count)
 
 def reset():
   t.up()
@@ -236,7 +221,7 @@ if __name__ == "__main__":
       half_background(-375,200,'red')
       outline()
       continue
-    if country.lower() == "china" or country.lower() == "cn" or country.lower() == "prc" or country.lower() == "people's republic of china":
+    if country.lower() == "china" or country.lower() == "cn" or country.lower() == "prc" or country.lower() == "people's republic of china": #TBD
       print("Country Selected: China / PRC")
       init()
       half_background(-375,200,'red')
@@ -293,7 +278,7 @@ if __name__ == "__main__":
     if country.lower() == "malaysia" or country.lower() == "my":
       print("Country Selected: Malaysia")
       init()
-      draw_stripes(-375,200,'red','white',7)
+      draw_stripes_even(-375,200,'red','white',14)
       canton(-375,200,370,215.5,'dark blue')
       moon(-150,85,'yellow','dark blue',85,78,15,275)
       nside_star(-215,95,120,'yellow',12,15)
@@ -363,6 +348,12 @@ if __name__ == "__main__":
       third_background(-375,200,'red')
       third_background(-375,200-(440/3),'white')
       third_background(-375,200-(2*(440/3)),(67,111,77))
+      outline()
+      continue
+    if country.lower() == "poland" or country.lower() == "pl":
+      print("Country Selected: Poland")
+      init()
+      half_background(-375,-20,'red')
       outline()
       continue
     if country.lower() == "exit" or country.lower() == "quit" or country.lower() == "close":
