@@ -340,6 +340,15 @@ if __name__ == "__main__":
       third_vert_background(125,200,"red")
       outline()
       continue
+    if country.lower() == "turkey" or country.lower() == "tr":
+      print("Country Selected: Turkey")
+      init()
+      half_background(-375,200,'red')
+      half_background(-375,-20,'red')
+      moon(-10,-20,'white','red',110,87,5,270)
+      five_star(40,40,0,'white',-15)
+      outline()
+      continue
     if country.lower() == "exit" or country.lower() == "quit" or country.lower() == "close":
       print("\nClosing program...\n")
       time.sleep(2)
