@@ -236,7 +236,7 @@ if __name__ == "__main__":
       half_background(-375,200,'red')
       outline()
       continue
-    if country.lower() == "china" or country.lower() == "cn" or country.lower() == "prc" or country.lower() == "people's republic of china": #TBD
+    if country.lower() == "china" or country.lower() == "cn" or country.lower() == "prc" or country.lower() == "people's republic of china":
       print("Country Selected: China / PRC")
       init()
       half_background(-375,200,'red')
@@ -279,7 +279,7 @@ if __name__ == "__main__":
       five_star(110,10,20,'white',0)
       outline()
       continue
-    if country.lower() == "taiwan" or country.lower() == "tw" or country.lower() == "roc" or country.lower() == "republic of china" or country.lower() == "chinese taipei":
+    if country.lower() == "taiwan" or country.lower() == "tw" or country.lower() == "roc" or country.lower() == "republic of china":
       print("Country Selected: Taiwan / ROC")
       init()
       half_background(-375,200,'red')
@@ -290,7 +290,7 @@ if __name__ == "__main__":
       circle(-210,50,40,'white')
       outline()
       continue
-    if country.lower() == "malaysia" or country.lower() == "my": #TBD
+    if country.lower() == "malaysia" or country.lower() == "my":
       print("Country Selected: Malaysia")
       init()
       draw_stripes(-375,200,'red','white',7)
