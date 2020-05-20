@@ -1,2 +1,2 @@
 language = "python_turtle"
-run = ""
+run = "main.py"
