@@ -349,6 +349,22 @@ if __name__ == "__main__":
       five_star(40,40,0,'white',-15)
       outline()
       continue
+    if country.lower() == "austria" or country.lower() == "at":
+      print("Country Selected: Austria")
+      init()
+      third_background(-375,200,'red')
+      third_background(-375,200-(440/3),'white')
+      third_background(-375,200-(2*(440/3)),'red')
+      outline()
+      continue
+    if country.lower() == "hungary" or country.lower() == "hu":
+      print("Country Selected: Hungary")
+      init()
+      third_background(-375,200,'red')
+      third_background(-375,200-(440/3),'white')
+      third_background(-375,200-(2*(440/3)),(67,111,77))
+      outline()
+      continue
     if country.lower() == "exit" or country.lower() == "quit" or country.lower() == "close":
       print("\nClosing program...\n")
       time.sleep(2)
