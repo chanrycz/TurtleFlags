@@ -415,6 +415,14 @@ if __name__ == "__main__":
       third_background(-375,200-(2*(440/3)),"yellow")
       outline()
       continue
+    if country.lower() == "bulgaria" or country.lower() == "bg":
+      print("Country Selected: Bulgaria")
+      init()
+      third_background(-375,200,"white")
+      third_background(-375,200-(440/3),"green")
+      third_background(-375,200-(2*(440/3)),"red")
+      outline()
+      continue
     if country.lower() == "exit" or country.lower() == "quit" or country.lower() == "close":
       print("\nClosing program...\n")
       time.sleep(2)
