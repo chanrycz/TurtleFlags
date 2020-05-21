@@ -197,7 +197,7 @@ def reset():
 if __name__ == "__main__":
   print("To exit this program, type 'exit'\n")
   print("Countries that are currently available:")
-  print("Singapore, Indonesia, China, Japan, Bangladesh, Vietnam, Myanmar, Taiwan, Malaysia, Ukraine, Libya, France, Italy, Belgium, Turkey, Austria, Hungary, Poland, Russia, the Netherlands and Germany.")
+  print("Singapore, Indonesia, China, Japan, Bangladesh, Vietnam, Myanmar, Taiwan, Malaysia, Ukraine, Libya, France, Italy, Belgium, Turkey, Austria, Hungary, Poland, Russia, the Netherlands, Germany, Thailand, Yemen, Armenia and Bulgaria.")
   while True:
     country = str(input("\nChoose a country:"))
     reset()
@@ -421,6 +421,14 @@ if __name__ == "__main__":
       third_background(-375,200,"white")
       third_background(-375,200-(440/3),"green")
       third_background(-375,200-(2*(440/3)),"red")
+      outline()
+      continue
+    if country.lower() == "somalia" or country.lower() == "so":
+      print("Country Selected: Somalia")
+      init()
+      half_background(-375,200,(65,137,221))
+      half_background(-375,-20,(65,137,221))
+      five_star(85,10,10,'white',0)
       outline()
       continue
     if country.lower() == "exit" or country.lower() == "quit" or country.lower() == "close":
