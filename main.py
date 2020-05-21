@@ -390,12 +390,21 @@ if __name__ == "__main__":
       third_background(-375,200-(440/3),"blue")
       outline()
       continue
-    if country.lower() == "yemen" or country.lower() == "de":
-      print("Country Selected: Germany")
+    if country.lower() == "yemen" or country.lower() == "ye":
+      print("Country Selected: Yemen")
       init()
       third_background(-375,200,"red")
       third_background(-375,200-(440/3),"white")
       third_background(-375,200-(2*(440/3)),"black")
+      outline()
+      continue
+    if country.lower() == "laos" or country.lower() == "la":
+      print("Country Selected: Laos")
+      init()
+      third_background(-375,200,"red")
+      third_background(-375,200-(2*(440/3)),"red")
+      half_background(-375,90,"blue")
+      circle(0,-105,85,'white')
       outline()
       continue
     if country.lower() == "exit" or country.lower() == "quit" or country.lower() == "close":
