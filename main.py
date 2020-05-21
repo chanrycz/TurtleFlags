@@ -33,6 +33,19 @@ def third_background(loc_x,loc_y,color):
     t.rt(90)
   t.end_fill()
 
+def fourth_background(loc_x,loc_y,color):
+  t.up()
+  t.goto(loc_x,loc_y)
+  t.down()
+  t.color(color)
+  t.begin_fill()
+  for _ in range(2):
+    t.fd(750)
+    t.rt(90)
+    t.fd(440/4)
+    t.rt(90)
+  t.end_fill()
+
 def third_vert_background(loc_x,loc_y,color):
   t.up()
   t.goto(loc_x,loc_y)
@@ -429,6 +442,15 @@ if __name__ == "__main__":
       half_background(-375,200,(65,137,221))
       half_background(-375,-20,(65,137,221))
       five_star(85,10,10,'white',0)
+      outline()
+      continue
+    if country.lower() == "mauritius" or country.lower() == "mu":
+      print("Country Selected: Mauritius")
+      init()
+      fourth_background(-375,200,"red")
+      fourth_background(-375,200-(440/4),"navy")
+      fourth_background(-375,200-(2*(440/4)),"yellow")
+      fourth_background(-375,200-(3*(440/4)),"green")
       outline()
       continue
     if country.lower() == "exit" or country.lower() == "quit" or country.lower() == "close":
