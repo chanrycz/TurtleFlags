@@ -407,6 +407,14 @@ if __name__ == "__main__":
       circle(0,-105,85,'white')
       outline()
       continue
+    if country.lower() == "armenia" or country.lower() == "am":
+      print("Country Selected: Armenia")
+      init()
+      third_background(-375,200,"red")
+      third_background(-375,200-(440/3),"blue")
+      third_background(-375,200-(2*(440/3)),"yellow")
+      outline()
+      continue
     if country.lower() == "exit" or country.lower() == "quit" or country.lower() == "close":
       print("\nClosing program...\n")
       time.sleep(2)
