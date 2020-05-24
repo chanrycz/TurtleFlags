@@ -210,7 +210,7 @@ def reset():
 if __name__ == "__main__":
   print("To exit this program, type 'exit'\n")
   print("Countries that are currently available:")
-  print("Singapore, Indonesia, China, Japan, Bangladesh, Vietnam, Myanmar, Taiwan, Malaysia, Ukraine, Libya, France, Italy, Belgium, Turkey, Austria, Hungary, Poland, Russia, the Netherlands, Germany, Thailand, Yemen, Armenia and Bulgaria.")
+  print("Singapore, Indonesia, China, Japan, Bangladesh, Vietnam, Myanmar, Taiwan, Malaysia, Ukraine, Libya, France, Italy, Belgium, Turkey, Austria, Hungary, Poland, Russia, the Netherlands, Germany, Thailand, Yemen, Armenia, Bulgaria, Somalia and Mauritius.")
   while True:
     country = str(input("\nChoose a country:"))
     reset()
