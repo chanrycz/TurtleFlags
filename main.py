@@ -453,6 +453,22 @@ if __name__ == "__main__":
       fourth_background(-375,200-(3*(440/4)),"green")
       outline()
       continue
+    if country.lower() == "chad" or country.lower() == "td":
+      print("Country Selected: Chad")
+      init()
+      third_vert_background(-375,200,"navy")
+      third_vert_background(-125,200,(254,203,0))
+      third_vert_background(125,200,"red")
+      outline()
+      continue
+    if country.lower() == "romania" or country.lower() == "ro":
+      print("Country Selected: Romania")
+      init()
+      third_vert_background(-375,200,"dark blue")
+      third_vert_background(-125,200,(252,209,22))
+      third_vert_background(125,200,"red")
+      outline()
+      continue
     if country.lower() == "exit" or country.lower() == "quit" or country.lower() == "close":
       print("\nClosing program...\n")
       time.sleep(2)
