@@ -230,7 +230,7 @@ def reset():
 if __name__ == "__main__":
   print("To exit this program, type 'exit'\n")
   print("Countries that are currently available:")
-  print("Singapore, Indonesia, China, Japan, Bangladesh, Vietnam, Myanmar, Taiwan, Malaysia, Ukraine, Libya, France, Italy, Belgium, Turkey, Austria, Hungary, Poland, Russia, the Netherlands, Germany, Thailand, Yemen, Laos, Armenia, Bulgaria, Somalia, Mauritius, Chad, Romania, Columbia, England, Gabon, Guinea and Denmark.")
+  print("Singapore, Indonesia, China, Japan, Bangladesh, Vietnam, Myanmar, Taiwan, Malaysia, Ukraine, Libya, France, Italy, Belgium, Turkey, Austria, Hungary, Poland, Russia, the Netherlands, Germany, Thailand, Yemen, Laos, Armenia, Bulgaria, Somalia, Mauritius, Chad, Romania, Columbia, England, Gabon, Guinea, Denmark, Sweden, Norway, Finland and Iceland.")
   while True:
     country = str(input("\nChoose a country:"))
     reset()
@@ -546,6 +546,16 @@ if __name__ == "__main__":
       init()
       full_background(-375,200,(255, 255, 255))
       nordic_cross(-375,200,90,90,(0, 53, 128),90)
+      t.rt(180)
+      outline()
+      continue
+    if country.lower() == "iceland" or country.lower() == "is":
+      print("Country Selected: Norway")
+      init()
+      full_background(-375,200,(2, 82, 156))
+      nordic_cross(-375,200,75,75,(255, 255, 255),90)
+      t.rt(180)
+      nordic_cross(-375,200,35,35,(220, 30, 53),90)
       t.rt(180)
       outline()
       continue
