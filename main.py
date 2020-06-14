@@ -1,4 +1,4 @@
-import turtle, time
+import turtle
 
 t = turtle.Turtle()
 t.speed(0)
@@ -33,6 +33,13 @@ def draw_rectangle(loc_x,loc_y,height,width,color):
 
 def outline():
   draw_rectangle(-375,200,440,750,'black')
+  t.color('white')
+  t.up()
+  t.goto(10000,10000)
+  print("Task Complete\n")
+
+def outline_switzerland():
+  draw_rectangle(-375,200,440,440,'black')
   t.color('white')
   t.up()
   t.goto(10000,10000)
@@ -99,55 +106,19 @@ def nside_star(loc_x,loc_y,length,color,side,angle):
   t.left(angle)
   t.up()
 
-def draw_stripes_even(loc_x,loc_y,color1,color2,count):
+def draw_stripes(loc_x,loc_y,color1,color2,count,odd):
   actual_count = (count)/2
   for stripe in range(actual_count):
     for color in [color1,color2]:
-      t.up()
-      t.goto(loc_x,loc_y)
-      t.down()
-      t.color(color)
-      t.begin_fill()
-      for _ in range(2):
-        t.fd(750)
-        t.rt(90)
-        t.fd(220/actual_count)
-        t.rt(90)
-      t.end_fill()
+      draw_rectangle_filled(loc_x,loc_y,220/actual_count,750,color)
       loc_y -= (220/actual_count)
+  if odd == True:
+    draw_rectangle_filled(loc_x,loc_y,220/actual_count,750,color)
+    loc_y -= (220/actual_count)
 
-def cross(loc_x,loc_y,width,height,color,left_align):
-  t.up()
-  t.goto(loc_x,loc_y)
-  t.fd(((750-width)/2)-left_align)
-  t.rt(90)
-  t.down()
-  t.color(color)
-  t.begin_fill()
-  t.fd((440-height)/2)
-  t.rt(90)
-  t.fd(((750-width)/2)-left_align)
-  t.lt(90)
-  t.fd(height)
-  t.lt(90)
-  t.fd(((750-width)/2)-left_align)
-  t.rt(90)
-  t.fd((440-height)/2)
-  t.lt(90)
-  t.fd(width)
-  t.lt(90)
-  t.fd((440-height)/2)
-  t.rt(90)
-  t.fd(((750-width)/2)+left_align)
-  t.lt(90)
-  t.fd(height)
-  t.lt(90)
-  t.fd(((750-width)/2)+left_align)
-  t.rt(90)
-  t.fd((440-height)/2)
-  t.lt(90)
-  t.fd(width)
-  t.end_fill()
+def cross(loc_x,loc_y,width,height,color,left_align,cross_width,cross_height):
+  draw_rectangle_filled(((loc_x+((cross_width-width)/2))-left_align),loc_y,cross_height,width,color)
+  draw_rectangle_filled(loc_x,loc_y-((cross_height-height)/2),height,cross_width,color)
 
 def full_background(loc_x,loc_y,color):
   draw_rectangle_filled(loc_x,loc_y,440,750,color)
@@ -180,24 +151,15 @@ def canton(loc_x,loc_y,width,height,color):
   draw_rectangle_filled(loc_x,loc_y,height,width,color)
 
 def reset():
-  t.up()
-  t.goto(-380,205)
-  t.down()
-  t.color('white')
-  t.begin_fill()
-  for _ in range(2):
-    t.fd(760)
-    t.rt(90)
-    t.fd(450)
-    t.rt(90)
-  t.end_fill()
+  draw_rectangle(-380,205,450,760,'white')
   t.up()
   t.goto(10000,10000)
 
 if __name__ == "__main__":
   print("To exit this program, type 'exit'\n")
+  print("NOTICE: The flags are inaccurate, the proportions are incorrect, but it looks good enough.\n")
   print("Countries that are currently available:")
-  print("Singapore, Indonesia, China, Japan, Bangladesh, Vietnam, Myanmar, Taiwan, Malaysia, Ukraine, Libya, France, Italy, Belgium, Turkey, Austria, Hungary, Poland, Russia, the Netherlands, Germany, Thailand, Yemen, Laos, Armenia, Bulgaria, Somalia, Mauritius, Chad, Romania, Columbia, England, Gabon, Guinea, Denmark, Sweden, Norway, Finland and Iceland.")
+  print("Singapore, Indonesia, China, Japan, Bangladesh, Vietnam, Myanmar, Taiwan, Malaysia, Ukraine, Libya, France, Italy, Belgium, Turkey, Austria, Hungary, Poland, Russia, the Netherlands, Germany, Thailand, Yemen, Laos, Armenia, Bulgaria, Somalia, Mauritius, Chad, Romania, Columbia, England, Gabon, Guinea, Denmark, Sweden, Norway, Finland, Iceland, Ireland and Switzerland.")
   while True:
     country = str(input("\nChoose a country:"))
     reset()
@@ -274,7 +236,7 @@ if __name__ == "__main__":
     if country.lower() == "malaysia" or country.lower() == "my":
       print("Country Selected: Malaysia")
       init()
-      draw_stripes_even(-375,200,(204, 0, 0),(255, 255, 255),14)
+      draw_stripes(-375,200,(204, 0, 0),(255, 255, 255),14,False)
       canton(-375,200,370,215.5,(0, 0, 102))
       moon(-150,85,(255, 204, 0),(0, 0, 102),85,78,15,275)
       nside_star(-215,95,120,(255, 204, 0),12,15)
@@ -316,7 +278,7 @@ if __name__ == "__main__":
     if country.lower() == "belgium" or country.lower() == "be":
       print("Country Selected: Belgium")
       init()
-      third_vert_background(-375,200,(255, 255, 255))
+      third_vert_background(-375,200,(0, 0, 0))
       third_vert_background(-125,200,(250, 224, 66))
       third_vert_background(125,200,(237, 41, 57))
       outline()
@@ -454,12 +416,11 @@ if __name__ == "__main__":
     if country.lower() == "england":
       print("Country Selected: England")
       init()
-      cross(-375,200,80,80,(206, 17, 36),0)
-      t.rt(180)
+      cross(-375,200,80,80,(206, 17, 36),0,750,440)
       outline()
       continue
-    if country.lower() == "colombia" or country.lower() == "co":
-      print("Country Selected: Colombia")
+    if country.lower() == "columbia" or country.lower() == "co":
+      print("Country Selected: Columbia")
       init()
       half_background(-375,200,(252,209,22))
       fourth_background(-375,200-(2*(440/4)),(0, 56, 147))
@@ -486,49 +447,58 @@ if __name__ == "__main__":
       print("Country Selected: Denmark")
       init()
       full_background(-375,200,(198, 12, 48))
-      cross(-375,200,75,75,(255, 255, 255),90)
-      t.rt(180)
+      cross(-375,200,75,75,(255, 255, 255),90,750,440)
       outline()
       continue
     if country.lower() == "sweden" or country.lower() == "se":
       print("Country Selected: Sweden")
       init()
       full_background(-375,200,(0, 106, 167))
-      cross(-375,200,75,75,(254, 204, 0),90)
-      t.rt(180)
+      cross(-375,200,75,75,(254, 204, 0),90,750,440)
       outline()
       continue
     if country.lower() == "norway" or country.lower() == "no":
       print("Country Selected: Norway")
       init()
       full_background(-375,200,(198, 12, 48))
-      cross(-375,200,75,75,(255, 255, 255),90)
-      t.rt(180)
-      cross(-375,200,35,35,(0, 40, 104),90)
-      t.rt(180)
+      cross(-375,200,75,75,(255, 255, 255),90,750,440)
+      cross(-375,200,35,35,(0, 40, 104),90,750,440)
       outline()
       continue
     if country.lower() == "finland" or country.lower() == "fi":
       print("Country Selected: Finland")
       init()
       full_background(-375,200,(255, 255, 255))
-      cross(-375,200,90,90,(0, 53, 128),90)
-      t.rt(180)
+      cross(-375,200,90,90,(0, 53, 128),90,750,440)
       outline()
       continue
     if country.lower() == "iceland" or country.lower() == "is":
-      print("Country Selected: Norway")
+      print("Country Selected: Iceland")
       init()
       full_background(-375,200,(2, 82, 156))
-      cross(-375,200,75,75,(255, 255, 255),90)
-      t.rt(180)
-      cross(-375,200,35,35,(220, 30, 53),90)
-      t.rt(180)
+      cross(-375,200,75,75,(255, 255, 255),90,750,440)
+      cross(-375,200,35,35,(220, 30, 53),90,750,440)
       outline()
       continue
+    if country.lower() == "ireland" or country.lower() == "ie":
+      print("Country Selected: Ireland")
+      init()
+      third_vert_background(-375,200,(22, 155, 98))
+      third_vert_background(-125,200,(255, 255, 255))
+      third_vert_background(125,200,(255, 136, 62))
+      outline()
+      continue
+    if country.lower() == "switzerland" or country.lower() == "ch":
+      print("Country Selected: Switzerland")
+      init()
+      full_background(-375,200,(255, 0, 0))
+      full_background(65,210,(255, 255, 255))
+      full_background(65,190,(255, 255, 255))
+      cross(-290,120,70,70,(255, 255, 255),0,275,275)
+      outline_switzerland()
+      continue
     if country.lower() == "exit" or country.lower() == "quit" or country.lower() == "close":
-      print("\nClosing program...\n")
-      time.sleep(2)
+      print("\nGood bye!\n")
       break
     else:
       print("\nError: Invalid Country\n")
